@@ -8,10 +8,10 @@ export class AppController {
   @Get()
   @Render('index')
   root():object {
-    return {message: this.appService.getHello(),};
+    return {message: this.appService.getHello(),arr:['a','b','c']};
   }
     
 
 
-  
+
 }
