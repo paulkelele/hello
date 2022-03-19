@@ -17,11 +17,7 @@ export class UsersController {
     @Get()
     @Render('users')
     async finsAll(){
-        let ar
        let r =  await this.userService.findAll();
-        console.log(r);
-        
-        
        return {arr:r};
     }
 
