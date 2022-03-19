@@ -15,7 +15,7 @@ export class UsersController {
 
     @Get()
     @Render('users')
-    async finsAll(){
+    async finsAll():Promise<object>{
        let r =  await this.userService.findAll();
        return {arr:r as User[]};
     }
