@@ -18,7 +18,7 @@ export class UsersController {
     @Render('users')
     async finsAll(){
        let r =  await this.userService.findAll();
-       return {arr:r};
+       return {arr:r as User[]};
     }
 
     @Get(':id')
