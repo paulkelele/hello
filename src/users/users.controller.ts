@@ -2,8 +2,7 @@ import { Controller,Get, Post , Body, Param, Delete, Render} from '@nestjs/commo
 import { CreateUsersDto } from './dto/create-users.dto';
 import { UsersService} from './users.service';
 import { User } from './user.entity';
-import { lastValueFrom } from 'rxjs';
-
+ 
 
 @Controller('users')
 export class UsersController {
