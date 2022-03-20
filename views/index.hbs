@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-     <meta charset="utf-8" />
-     <title>App</title>
-    </head>
-    <body>
-        {{message}}
-         {{#each arr}}
-            <li>{{this}}</li>
-         {{/each}}
-    </body>
-</html>
+{{> header}}
+       <form action="/users" method="POST">
+           <input name="nom" placeholder="nom">
+            <input name="prenom" placeholder="prenom">
+            <input name="email" placeholder="email">
+
+        <button type="submit">envoyer</button>
+       </form>
+{{> footer}}

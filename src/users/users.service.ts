@@ -13,9 +13,9 @@ export class UsersService {
 
     create(createUsersDto: CreateUsersDto): Promise<User> {
         const user = new User();
-        user.nom = createUsersDto.nom;
-        user.prenom = createUsersDto.prenom;
-        user.email = createUsersDto.email;
+        user.setNom(createUsersDto.nom) ;
+        user.setPrenom(createUsersDto.prenom);
+        user.setEmail(createUsersDto.email);
         return this.userRepository.save(user);
     }
 
