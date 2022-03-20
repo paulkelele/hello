@@ -18,7 +18,7 @@ export class UsersService {
         user.setNom(createUsersDto.nom) ;
         user.setPrenom(createUsersDto.prenom);
         user.setEmail(createUsersDto.email);
-        const saltOrRounds = 10;
+        const saltOrRounds = await bcrypt.genSalt();
         const password = createUsersDto.password;
         const hash = await bcrypt.hash(password, saltOrRounds);
         user.setPassword(hash);
@@ -29,11 +29,12 @@ export class UsersService {
         return this.userRepository.find();
     }
 
-    findOne(id:string):Promise<User>{
-        return this.userRepository.findOneOrFail(id);
+    findOneByName(nom:string):Promise<User>{
+        return this.userRepository.findOne({where:{nom:nom}});
     }
 
     async remove(id:string): Promise<void>{
         await this.userRepository.delete(id);
     }
-}
+
+ }
