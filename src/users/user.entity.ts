@@ -13,9 +13,11 @@ export class User{
     @Column({name:'prenom', length:'50'})
     private prenom:string;
 
-    @Column({name:'email', length:'50'})
+    @Column({name:'email', length:'50',unique:true})
     private email:string;
 
+    @Column({name:'password', length:'255'})
+    private password:string;
     
     getId() {
       return this.id
@@ -49,6 +51,13 @@ export class User{
       this.email = val
     }
  
+    getPassword() {
+      return this.password
+    }
+    
+    setPassword(val: string) {
+      this.password = val
+    }
  
  
     
